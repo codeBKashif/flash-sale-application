@@ -15,7 +15,9 @@ A full-stack Flash Sale Application built with React, Node.js, PostgreSQL, and R
 
 ## Installation
 
-1. Download the code and unzip
+1. Clone the repository
+   git clone https://github.com/codeBKashif/flash-sale-application
+   cd flash-sale-application
 
 2. Install dependencies:
    cd api
