@@ -1,0 +1,25 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 60
+      arrivalRate: 20
+  defaults:
+    headers:
+      Content-Type: "application/json"
+
+scenarios:
+  - name: "Buy new product"
+    flow:
+      - post:
+          url: "/auth/token"
+          json:
+            email: "USER_ID_{{$randomString(8)}}@gmail.com"
+          capture:
+            - json: "$.token"
+              as: "token"
+      - post:
+          url: "/orders"
+          headers:
+            Authorization: "{{token}}"
+          json:
+            productId: 1
