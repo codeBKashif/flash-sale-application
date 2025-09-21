@@ -35,6 +35,7 @@ A full-stack Flash Sale Application built with React, Node.js, PostgreSQL, and R
 1. Start backend (API + workers):
 
    - `cd api`
+   - Modify api/config/sale.json and set the sale start date, end date
    - `npm run dev` --> starts the Node server
    - Please run node server to PORT 3000, currently React app is set to PORT 3000, can be modified with dotenv package later
    - `node workers.js` --> starts BullMQ workers
@@ -59,6 +60,11 @@ A full-stack Flash Sale Application built with React, Node.js, PostgreSQL, and R
    (Ensure your API server is running before executing the test.)
 
 ---
+
+## Test cases
+
+1. Run unit and e2e test cases by running following
+   - `npx jest test`
 
 ## Notes
 
