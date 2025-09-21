@@ -64,4 +64,3 @@ A full-stack Flash Sale Application built with React, Node.js, PostgreSQL, and R
 
 - Ensure PostgreSQL and Redis are running before starting the API.
 - The BullMQ workers must be running to process background jobs (e.g., order creation).
-- The frontend React app uses the .env file for API configuration.
