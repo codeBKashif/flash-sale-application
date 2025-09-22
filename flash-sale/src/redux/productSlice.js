@@ -38,7 +38,11 @@ const productSlice = createSlice({
     error: null,
     saleActiveMessage: "",
   },
-  reducers: {},
+  reducers: {
+    clearError(state) {
+      state.error = null;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getProducts.fulfilled, (state, action) => {
       state.items = action.payload.rows;
@@ -69,5 +73,7 @@ const productSlice = createSlice({
     });
   },
 });
+
+export const { clearError } = productSlice.actions;
 
 export default productSlice.reducer;

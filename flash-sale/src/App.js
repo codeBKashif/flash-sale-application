@@ -1,13 +1,15 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
+
 import Login from "./components/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ProductList from "./components/ProductList";
-import ErrorProvider from "./components/ErrorProvider";
 import OrderStatus from "./components/OrderStatus";
 
 function App() {
   return (
-    <ErrorProvider>
+    <>
+      <Toaster position="top-right" reverseOrder={false} />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />} />
@@ -17,7 +19,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-    </ErrorProvider>
+    </>
   );
 }
 

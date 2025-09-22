@@ -1,13 +1,11 @@
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { authenticateUser } from "../redux/authSlice";
 
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
-  const { error } = useSelector((state) => state.auth);
 
   const handleLogin = async (e) => {
     e.preventDefault();

@@ -1,15 +1,13 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
-import { getSaleStatus, getProducts } from "../redux/productSlice";
+import { getSaleStatus, getProducts, clearError } from "../redux/productSlice";
 import Product from "./Product";
-import { useError } from "./ErrorProvider";
 
 const ProductList = () => {
   const navigate = useNavigate();
-  const { showError } = useError();
-  const prevErrorRef = useRef();
 
   const { saleActive, items, saleActiveMessage, error } = useSelector(
     (state) => state.products
@@ -35,11 +33,11 @@ const ProductList = () => {
   }, [saleActive, dispatch, navigate]);
 
   useEffect(() => {
-    if (error && error !== prevErrorRef.current) {
-      showError(error);
-      prevErrorRef.current = error;
+    if (error) {
+      toast.error(error);
+      dispatch(clearError());
     }
-  }, [error, showError]);
+  }, [error]);
 
   return (
     <div className="min-h-screen bg-gray-100 p-6 relative">

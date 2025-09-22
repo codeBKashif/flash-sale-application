@@ -8,7 +8,7 @@ A full-stack Flash Sale Application built with React, Node.js, PostgreSQL, and R
 
 1. PostgreSQL installed (locally or via Docker).
 2. Redis installed locally OR run using Docker:
-   docker run -p 6379:6379 redis
+   `docker run -p 6379:6379 redis`
 3. Node.js (>= 18) and npm (>= 9) installed.
 
 ---
